@@ -6,21 +6,22 @@ const DoctorList = (props) => {
     let address = ['flat # 102, Classic Avenue', 'Street # 4, Czech Colony', 'Sanathnagar', 'Hyderbad - 500018']
     let phone = '+919999999999'
     let website = 'www.superdoc.com'
-    let specialization = "Cardialogit"
-    let education = ["MBBS, KMC", ["DMC Royal College of Liverpool"]]
+    // let specialization = "Cardialogit" 
+    // let education = ["MBBS, KMC", "DMC Royal College of Liverpool"]
     let online = props.online
     let offline = props.offline
     let status = ""
 
-    if(online && offline) {
+    if (online && offline) {
         status = "Online and Offline"
     } else if (online) {
         status = "Only Online"
-    } else if(offline) {
+    } else if (offline) {
         status = "Only Offline"
     } else {
         status = "Unavailable"
     }
+
     const [showInfo, setShow] = React.useState(false)
     const headerStyles = {
         backgroundColor: Colors.bg,
@@ -123,24 +124,25 @@ const DoctorList = (props) => {
             <div style={infoStyle}>
                 <div style={infoAddress}>
                     <h1 style={headings}>Address :</h1>
-                    {address.slice(0, -1).map((med) => {
+                    {props.address.slice(0, -1).map((med) => {
                         return <p style={addLine}>{med},</p>
                     })}
-                    <p style={addLine}>{address.slice(-1)}</p>
+                    <p style={addLine}>{props.address.slice(-1)}</p>
                 </div>
                 <div style={infoPhWeb}>
                     <h1 style={headings}>Phone number :</h1>
-                    <p>{phone}</p>
+                    <p>{props.phone}</p>
                     <h1 style={headings}>Website :</h1>
-                    {website}
+                    <a href={props.website}>{props.website}</a>
                 </div>
                 <div style={infoSpEd}>
                     <h1 style={headings}>Specialization :</h1>
-                    <p>{specialization}</p>
+                    <p>{props.specialization}</p>
                     <h1 style={headings}>Education :</h1>
-                    {education.map((edd) => {
+                    {props.education.slice(0, -1).map((edd) => {
                         return <p style={addLine}>{edd},</p>
                     })}
+                    <p style={addLine}>{props.education.slice(-1)}</p>
                 </div>
             </div>
         </div>

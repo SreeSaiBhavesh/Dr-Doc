@@ -1,13 +1,11 @@
 import React from 'react';
 import '../App.css';
-import MainLogo from '../Components/MainLogo'
 import Header from '../Components/Header'
 import Card from '../Components/Card'
 
-import LogoSrc from '../images/main_logo.png'
 import Colors from '../colorsPallate'
 
-const Support = () => {
+const Home = () => {
 
     // backgroundColor: Colors.primary,
     // width: '100%',
@@ -39,11 +37,15 @@ const Support = () => {
         color: Colors.bg
     }
 
-    const faq = ["Q1) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus lobortis porta. Cras ac lorem at elit euismod sollicitudin in quis ligula.", "Ans) Lorem ipsum dolor sit amet, consectetur adipiscing elit.Fusce finibus lobortis porta.Cras ac lorem at elit euismod sollicitudin in quis ligula.", "Q2) bitasse platea dictumst.Nullam pellentesque malesuada neque, vel ornare enim cursus fermentum.Orci varius natoque penatibus et magnis dis parturient montes, nas", "Ans) lobortis sapien ac, ullamcorper tincidunt tortor.Sed rutrum tincidunt ligula ac rutrum.Cras dignissim leo nisi, ac consequat nunc facilisis id.Nunc imperdiet orci ut enim rhoncus, eu porta quam consequat"]
+    const faq = [
+        <p>Q1) Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce finibus lobortis porta. Cras ac lorem at elit euismod sollicitudin in quis ligula.</p>,
+        <p>Ans) Lorem ipsum dolor sit amet, consectetur adipiscing elit.Fusce finibus lobortis porta.Cras ac lorem at elit euismod sollicitudin in quis ligula.</p>,
+        <p>Q2) bitasse platea dictumst.Nullam pellentesque malesuada neque, vel ornare enim cursus fermentum.Orci varius natoque penatibus et magnis dis parturient montes, nas</p>,
+        <p>Ans) lobortis sapien ac, ullamcorper tincidunt tortor.Sed rutrum tincidunt ligula ac rutrum.Cras dignissim leo nisi, ac consequat nunc facilisis id.Nunc imperdiet orci ut enim rhoncus, eu porta quam consequat</p>
+    ]
 
     return (
         <div>
-            <MainLogo src={LogoSrc} />
             <div style={cardStyle}>
                 <span style={contentStyle}>One destination for all your medical needs</span>
             </div>
@@ -56,4 +58,4 @@ const Support = () => {
 
 }
 
-export default Support;
+export default Home;

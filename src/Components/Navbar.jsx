@@ -2,6 +2,7 @@ import React from 'react';
 import { Navbar, Nav, Container, NavDropdown } from 'react-bootstrap';
 import Colors from '../colorsPallate'
 
+
 const Navigation = () => {
 
     const navbar = {
@@ -10,7 +11,7 @@ const Navigation = () => {
     }
 
     const navItems = {
-        color: Colors.tertiary
+        color: Colors.tertiary,
     }
 
     return (

@@ -1,13 +1,11 @@
 import React from 'react';
 import '../App.css';
-import MainLogo from '../Components/MainLogo'
 import Header from '../Components/Header'
 import Input from '../Components/Input'
 import Button from '../Components/Button'
 import Medicine from '../Components/MedicineList'
 import Store from '../Components/Store'
 
-import LogoSrc from '../images/main_logo.png'
 import Colors from '../colorsPallate'
 
 const Diagnostics = () => {
@@ -44,7 +42,7 @@ const Diagnostics = () => {
         }
     ])
 
-    function addMedicine() {
+    function addDiagnostics() {
         if (inputText != "") {
             updateDiagnostics((prevDiagnostics) => {
                 return [...prevDiagnostics, inputText];
@@ -69,15 +67,15 @@ const Diagnostics = () => {
     return (
         <div>
 
-            <MainLogo src={LogoSrc} />
             <Header title="Find Diagnostics" />
             <Input name="Diagnostics"
                 placeholder="Enter your test name"
                 type="text"
                 value={inputText}
                 handleChange={inputChange}
+                handleKeyDown={(e) => e.key === "Enter" ? addDiagnostics() : null}
             />
-            <Button text="Add" color={Colors.primary} handleClick={addMedicine} />
+            <Button text="Add" color={Colors.primary} handleClick={addDiagnostics} />
             {diagnostics.map((medicine, index) => (
                 <Medicine
                     key={index}
